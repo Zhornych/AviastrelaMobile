@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private String[] phrases = {
             "Проверка файлов!",
             "Расставляем ваш багаж и файлы по местам...",
-            "Практически готовы к взлёту!",
             "Готовы к взлету? Багаж, документы, хорошее настроение? Всё на месте? :)",
             "Всё готово для взлёта! Авиастрела проведёт вас к новым горизонтам."
     };
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < phrases.length; i++) {
                 publishProgress(phrases[i]);
                 try {
-                    Thread.sleep(2000); // Увеличиваем задержку до 2 секунд
+                    Thread.sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -51,12 +50,12 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(String... values) {
             // Анимация затухания
-            loadingText.setAlpha(0f); // Устанавливаем начальную прозрачность
-            loadingText.setText(values[0]); // Обновляем текст с текущей фразой
+            loadingText.setAlpha(0f);
+            loadingText.setText(values[0]);
             loadingText.animate()
-                    .alpha(1f) // Устанавливаем конечную прозрачность
+                    .alpha(1f)
                     .setDuration(500) // Длительность анимации
-                    .start(); // Запускаем анимацию
+                    .start(); // Запуск анимацию
         }
 
         @Override
@@ -64,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             // Переход на следующий экран после завершения проверки
             Intent intent = new Intent(MainActivity.this, NextActivity.class);
             startActivity(intent);
-            finish(); // Закрываем текущую активность
+            finish();
         }
     }
 }

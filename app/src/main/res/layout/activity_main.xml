@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#3171B0"
     tools:context=".MainActivity">
 
     <!-- Верхняя панель с иконкой и названием -->
@@ -17,26 +17,24 @@
         app:cardBackgroundColor="#4682B4"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
+            android:layout_height="128dp"
+            android:gravity="center"
             android:orientation="horizontal"
             android:padding="16dp">
 
             <!-- Иконка приложения -->
             <ImageView
                 android:id="@+id/app_icon"
-                android:layout_width="351dp"
-                android:layout_height="56dp"
+                android:layout_width="116dp"
+                android:layout_height="98dp"
                 android:layout_marginEnd="8dp"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_launcher_background" />
-
-            <!-- Название приложения -->
+                android:scaleType="centerCrop"
+                android:src="@drawable/icon" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -78,13 +76,4 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="fitEnd"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
