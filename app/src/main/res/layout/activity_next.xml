@@ -8,4 +8,93 @@
     android:background="#3171B0"
     tools:context=".NextActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D3D3D3">
+
+        <!-- Кнопка закрытия -->
+        <ImageButton
+            android:id="@+id/close_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_close"
+            android:contentDescription="Закрыть экран"
+            android:padding="8dp" />
+
+        <!-- Логотип -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/logo_plane" />
+
+        <!-- Заголовок -->
+        <TextView
+            android:id="@+id/welcome_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_centerHorizontal="true"
+            android:text="Добро пожаловать в Авиастрелу!"
+            android:textColor="#4682B4"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Описание -->
+        <TextView
+            android:id="@+id/welcome_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcome_title"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"
+            android:text="Управляйте рейсами, пассажирами и расписанием с лёгкостью."
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:textSize="14sp" />
+
+        <!-- ViewPager2 для слайдера изображений -->
+
+        <!-- Индикаторы изображений -->
+        <LinearLayout
+            android:id="@+id/indicator_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp" />
+
+        <!-- Кнопка Начать работу -->
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="#4682B4"
+            android:text="Начать работу"
+            android:textColor="@android:color/white" />
+
+        <!-- Чекбокс -->
+        <CheckBox
+            android:id="@+id/skip_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/start_button"
+            android:layout_centerHorizontal="true"
+            android:text="Больше не показывать это сообщение"
+            android:textColor="@android:color/black" />
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

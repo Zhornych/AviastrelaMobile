@@ -1,24 +1,54 @@
 package com.example.aviastrela;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.ImageButton;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class NextActivity extends AppCompatActivity {
+
+    private CheckBox skipCheckbox;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+
+        // Инициализация SharedPreferences
+        sharedPreferences = getSharedPreferences("app_prefs", MODE_PRIVATE);
+
+        // Проверка состояния чекбокса
+        if (sharedPreferences.getBoolean("skip_welcome", false)) {
+            openSecondScreen(); // Открываем SecondActivity, если чекбокс отмечен
+            return; // Завершаем текущую активность
+        }
+
         setContentView(R.layout.activity_next);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        // Инициализация компонентов интерфейса
+        ImageButton closeButton = findViewById(R.id.close_button);
+        Button startButton = findViewById(R.id.start_button);
+        skipCheckbox = findViewById(R.id.skip_checkbox);
+
+        // Обработчик кнопки закрытия
+        closeButton.setOnClickListener(view -> finish()); // Закрывает приложение
+
+        // Обработчик кнопки "Начать работу"
+        startButton.setOnClickListener(view -> {
+            if (skipCheckbox.isChecked()) {
+                sharedPreferences.edit().putBoolean("skip_welcome", false).apply(); // Сохраняем состояние чекбокса
+            }
+            openSecondScreen(); // Открываем SecondActivity
         });
+    }
+
+    private void openSecondScreen() {
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
