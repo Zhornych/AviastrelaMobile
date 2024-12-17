@@ -29,43 +29,39 @@
             android:contentDescription="Закрыть экран"
             android:padding="8dp" />
 
-        <!-- Логотип -->
+        <!-- Изображение диспетчера-помощника -->
         <ImageView
-            android:id="@+id/logo"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="24dp"
-            android:src="@drawable/logo_plane" />
+            android:id="@+id/assistant_image"
+            android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_assistant"
+        android:contentDescription="Диспетчер помощник" />
 
-        <!-- Заголовок -->
-        <TextView
-            android:id="@+id/welcome_title"
-            android:layout_width="wrap_content"
+        <!-- Панель для текста -->
+        <LinearLayout
+            android:id="@+id/text_panel"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/logo"
-            android:layout_centerHorizontal="true"
-            android:text="Добро пожаловать в Авиастрелу!"
-            android:textColor="#4682B4"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_below="@id/assistant_image"
+            android:background="#4682B4"
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
 
-        <!-- Описание -->
-        <TextView
-            android:id="@+id/welcome_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/welcome_title"
-            android:layout_marginTop="8dp"
-            android:layout_centerHorizontal="true"
-            android:text="Управляйте рейсами, пассажирами и расписанием с лёгкостью."
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            android:textSize="14sp" />
+            <!-- Текст -->
+            <TextView
+                android:id="@+id/welcome_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Приветствую Вас в Системе Расписания полётов!\nЭто приложение предназначено для просмотра актуального расписания рейсов,\nпоиска и покупки билетов, а также получения информации о вашем рейсе.\n\nЗдесь вы сможете:\n1. Просматривать расписание рейсов.\n2. Отслеживать информацию о ваших полетах.\n3. Получать уведомления о изменениях времени вылета.\n\nЖелаю Вам приятного пользования!"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"
+                android:gravity="start" />
+        </LinearLayout>
 
-        <!-- ViewPager2 для слайдера изображений -->
-
-        <!-- Индикаторы изображений -->
         <LinearLayout
             android:id="@+id/indicator_layout"
             android:layout_width="wrap_content"
