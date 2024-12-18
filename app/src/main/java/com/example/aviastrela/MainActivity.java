@@ -12,7 +12,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     private TextView loadingText;
-    private String[] phrases = {
+    private final String[] phrases = {
             "Проверка файлов!",
             "Расставляем ваш багаж и файлы по местам...",
             "Готовы к взлету? Багаж, документы, хорошее настроение? Всё на месте? :)",
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < phrases.length; i++) {
                 publishProgress(phrases[i]);
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             // Переход на следующий экран после завершения проверки
-            Intent intent = new Intent(MainActivity.this, NextActivity.class);
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
             startActivity(intent);
             finish();
         }
