@@ -40,7 +40,7 @@
                 android:id="@+id/welcome_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_marginTop="16dp"
                 android:text="Добро пожаловать в АвиаСтрелу!"
                 android:textColor="#4682B4"
@@ -52,7 +52,7 @@
                 android:id="@+id/welcome_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Управляйте рейсами, пассажирами и расписанием с лёгкостью."
+                android:text="Планируйте своё путешествие с комфортом: просматривайте актуальное расписание рейсов и легко приобретайте билеты!"
                 android:textColor="#555555"
                 android:gravity="center"
                 android:textSize="16sp"
@@ -94,31 +94,19 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <!-- Текст юридической информации -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Мобильное приложение АвиаСтрела."
+            android:textColor="#888888"
+            android:gravity="center"
+            android:textSize="12sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="© АвиаСтрела 2005-2024 г. Все права защищены."
-            android:textColor="#888888"
-            android:textSize="12sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="АвиаСтрела® - зарегистрированный товарный знак."
-            android:textColor="#888888"
-            android:textSize="12sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Условия использования информации  |  Отказ от ответственности  |  Размещение рекламы"
-            android:textColor="#888888"
-            android:textSize="12sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Мобильное приложение АвиаСтрела © 2024. Все права защищены."
             android:textColor="#888888"
             android:textSize="12sp" />
 
