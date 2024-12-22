@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             // Переход на следующий экран после завершения проверки
-            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            Intent intent = new Intent(MainActivity.this, NextActivity.class);
             startActivity(intent);
             finish();
         }
