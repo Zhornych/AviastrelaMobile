@@ -2,6 +2,7 @@ package com.example.aviastrela;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -12,9 +13,17 @@ public class TicketBuyActivity extends AppCompatActivity {
 
     private EditText firstNameEditText, lastNameEditText, passportNumberEditText, dateOfBirthEditText, phoneEditText, emailEditText;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Установка полноэкранного режима
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+        if (getActionBar() != null) {
+            getActionBar().hide();
+        }
+
         setContentView(R.layout.activity_ticket_buy);
 
         // Инициализация полей ввода

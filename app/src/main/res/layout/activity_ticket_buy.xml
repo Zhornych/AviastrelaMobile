@@ -5,38 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f0f8ff"
-    android:padding="16dp"
     tools:context=".TicketBuyActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Заголовок формы покупки билета -->
+        <!-- Поле для ввода имени -->
         <TextView
             android:id="@+id/ticket_buy_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#3171B0"
+            android:elevation="4dp"
+            android:fitsSystemWindows="true"
+            android:gravity="center"
+            android:padding="16dp"
             android:text="Покупка билета"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:layout_marginBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <!-- Поле для ввода имени -->
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/label_first_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:text="Имя"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ticket_buy_title" />
+            app:layout_constraintTop_toBottomOf="@id/ticket_buy_title"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <EditText
             android:id="@+id/first_name"
