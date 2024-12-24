@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < phrases.length; i++) {
                 publishProgress(phrases[i]);
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(2500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             loadingText.setText(values[0]);
             loadingText.animate()
                     .alpha(1f)
-                    .setDuration(500) // Длительность анимации
+                    .setDuration(800) // Длительность анимации
                     .start(); // Запуск анимацию
         }
 
