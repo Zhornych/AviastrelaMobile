@@ -5,13 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3171B0"
+    android:background="#f0f8ff"
     tools:context=".NextActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#D3D3D3">
+        android:background="#f0f8ff">
 
         <!-- Кнопка закрытия -->
         <ImageButton
